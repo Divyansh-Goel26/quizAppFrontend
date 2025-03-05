@@ -3,7 +3,6 @@ package com.divyansh.quizAppProject.controller;
 import com.divyansh.quizAppProject.Entity.QuizQuestions;
 import com.divyansh.quizAppProject.service.questionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
