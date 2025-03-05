@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("http://127.0.0.1:5500/")
+@CrossOrigin("*")
 public class questionController {
 
     @Autowired
