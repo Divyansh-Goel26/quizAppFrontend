@@ -18,6 +18,7 @@ public class QuizQuestions {
     @Column(name = "option_text")
     private List<String> options;
 
+    public QuizQuestions(){}
 
     public Long getId() {
         return id;

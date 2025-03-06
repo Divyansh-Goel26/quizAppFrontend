@@ -9,7 +9,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*")
+//@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+
 public class questionController {
 
     @Autowired
@@ -22,7 +24,13 @@ public class questionController {
 
     @PostMapping("/save")
     public List<QuizQuestions> saveQuestion(@RequestBody List<QuizQuestions> quizQuestions){
-        return questionService.saveQ(quizQuestions);
+//        return questionService.saveQ(quizQuestions);
+        try {
+            return questionService.saveQ(quizQuestions);
+        } catch (Exception e) {
+            System.err.println("Error saving questions: " + e.getMessage());
+            return null;
+        }
     }
 
    @GetMapping("/quizType/{quizType}")
